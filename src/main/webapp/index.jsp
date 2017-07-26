@@ -8,9 +8,9 @@
     <h3>测试@ModelAttribute的不同用法</h3>
     <hr>
     <a href="form/loginForm1">测试@ModelAttribute(value="")注释返回具体类的方法</a><br><br>
-    <a href="loginForm2">测试@ModelAttribute注释void返回值的方法</a>
-    <a href="loginForm3">测试@ModelAttribute注释返回具体类的方法</a>
-    <a href="loginForm4">测试@ModelAttribute和@RequestMapping同时注释一个方法</a>
-    <a href="loginForm5">测试@ModelAttribute注释一个方法的参数</a>
+    <a href="form/loginForm2">测试@ModelAttribute注释void返回值的方法</a><br><br>
+    <a href="form/loginForm3">测试@ModelAttribute注释返回具体类的方法</a><br><br>
+    <a href="form/loginForm4">测试@ModelAttribute和@RequestMapping同时注释一个方法</a><br><br>
+    <a href="form/loginForm5">测试@ModelAttribute注释一个方法的参数</a><br><br>
 </body>
 </html>
