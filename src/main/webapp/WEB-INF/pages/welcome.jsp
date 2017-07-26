@@ -12,6 +12,8 @@
 </head>
 <body>
     欢迎[${requestScope.user.username}]登录
+    <hr>
+    <h3>访问FormController类中@ModelAttribute注解的对象:${requestScope.loginname}</h3>
 <br>
 </body>
 </html>
