@@ -33,6 +33,7 @@ public class UserController {
     @RequestMapping(value = "register",method = RequestMethod.GET)
     public String registerForm(){
         logger.info("register GET方法被调用....");
+        System.out.println("register GET方法被调用....");
         return "registerForm";
     }
 
@@ -44,6 +45,7 @@ public class UserController {
                            @RequestParam("username")String username){
 
         logger.info("register POST方法被调用");
+        System.out.println("register  POST方法被调用....");
         User user = new User();
         user.setLoginname(loginname);
         user.setPassword(password);
@@ -51,19 +53,27 @@ public class UserController {
         userList.add(user);
         return "loginForm";
     }
-    //映射请求 user/login
-    @RequestMapping(value = "/login")
+    //映射请求 user/login ,POST方法
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(
             @RequestParam("loginname")String loginname,
             @RequestParam("password")String password,
             Model model){
         logger.info("登录名:"+loginname+",密码:"+password);
+        System.out.println("登录名:"+loginname+",密码:"+password);
         for(User user : userList){
             if(user.getLoginname().equals(loginname)&&user.getPassword().equals(password)){
                 model.addAttribute("user",user);
                 return "welcome";
             }
         }
+        return "loginForm";
+    }
+
+    //映射请求user/login,GET方法
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String login(){
+        System.out.println("调用login的GET方法");
         return "loginForm";
     }
 
