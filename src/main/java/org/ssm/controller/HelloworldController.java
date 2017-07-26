@@ -9,6 +9,6 @@ public class HelloworldController {
     @RequestMapping(value = "/hello")
     public String hello(Model model){
         model.addAttribute("message","Hello world");
-        return "hello";
+        return "pages/hello";
     }
 }

@@ -18,7 +18,7 @@ public class SessionAttributesController {
     @RequestMapping(value = "/{formName}")
     public String loginForm(@PathVariable String formName){
 //    动态跳转页面
-        return formName;
+        return "pages1/"+formName;
     }
 
     @RequestMapping(value = "/login")
@@ -32,6 +32,6 @@ public class SessionAttributesController {
         user.setPassword(password);
         user.setUsername("admin");
         model.addAttribute("user",user);
-        return "welcome";
+        return "pages1/welcome";
     }
 }

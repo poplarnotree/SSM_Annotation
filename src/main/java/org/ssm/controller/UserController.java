@@ -34,7 +34,7 @@ public class UserController {
     public String registerForm(){
         logger.info("register GET方法被调用....");
         System.out.println("register GET方法被调用....");
-        return "registerForm";
+        return "pages/registerForm";
     }
 
     //下面这个方法仅仅支持POST请求,同时映射到的是/user/register
@@ -51,7 +51,7 @@ public class UserController {
         user.setPassword(password);
         user.setUsername(username);
         userList.add(user);
-        return "loginForm";
+        return "pages/loginForm";
     }
     //映射请求 user/login ,POST方法
     @RequestMapping(value = "/login",method = RequestMethod.POST)
@@ -64,17 +64,17 @@ public class UserController {
         for(User user : userList){
             if(user.getLoginname().equals(loginname)&&user.getPassword().equals(password)){
                 model.addAttribute("user",user);
-                return "welcome";
+                return "pages/welcome";
             }
         }
-        return "loginForm";
+        return "pages/loginForm";
     }
 
     //映射请求user/login,GET方法
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String login(){
         System.out.println("调用login的GET方法");
-        return "loginForm";
+        return "pages/loginForm";
     }
 
 

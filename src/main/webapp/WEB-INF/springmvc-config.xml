@@ -11,16 +11,12 @@
     <mvc:annotation-driven/>
     <!--ViewResolver 视图解析器-->
     <!--用于支持Servlet、JSP视图解析-->
-    <bean id="pagesViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="ViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    <bean id="pages1ViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/pages1/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
+
 
     <!--处理映射器将bean的name作为url进行查找，需要在配置Handle时指定name(即Url)-->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
